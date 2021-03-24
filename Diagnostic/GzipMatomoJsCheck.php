@@ -8,17 +8,13 @@
 
 namespace Piwik\Plugins\DiagnosticsExtended\Diagnostic;
 
-use Piwik\Db;
 use Piwik\Http;
-use Piwik\Date;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResultItem;
-use Piwik\Plugins\DiagnosticsExtended\Diagnostic\IniSettings\IniSetting;
 use Piwik\SettingsPiwik;
 use Piwik\Tracker\TrackerCodeGenerator;
 use Psr\Log\LoggerInterface;
-use function DI\factory;
 
 class GzipMatomoJsCheck implements Diagnostic
 {

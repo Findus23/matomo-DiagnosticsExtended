@@ -8,15 +8,13 @@
 
 namespace Piwik\Plugins\DiagnosticsExtended\Diagnostic;
 
+use Piwik\Date;
 use Piwik\Db;
 use Piwik\Http;
-use Piwik\Date;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResultItem;
-use Piwik\Plugins\DiagnosticsExtended\Diagnostic\IniSettings\IniSetting;
 use Psr\Log\LoggerInterface;
-use function DI\factory;
 
 class DatabaseVersionCheck implements Diagnostic
 {

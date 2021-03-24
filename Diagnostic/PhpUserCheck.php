@@ -10,10 +10,10 @@ namespace Piwik\Plugins\DiagnosticsExtended\Diagnostic;
 
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
-use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResultItem;
+use Piwik\SettingsServer;
 use Psr\Log\LoggerInterface;
 
-class ExampleCheck implements Diagnostic
+class PhpUserCheck implements Diagnostic
 {
     /**
      * @var LoggerInterface
@@ -25,14 +25,23 @@ class ExampleCheck implements Diagnostic
         $this->logger = $logger;
     }
 
+    /**
+     * @return DiagnosticResult[]
+     */
     public function execute()
     {
-        $result = new DiagnosticResult("label");
-        $result->addItem(new DiagnosticResultItem(DiagnosticResult::STATUS_ERROR, "error"));
-        $result->addItem(new DiagnosticResultItem(DiagnosticResult::STATUS_WARNING, "warning"));
-        $result->addItem(new DiagnosticResultItem(DiagnosticResult::STATUS_OK, "okay"));
-        $result->addItem(new DiagnosticResultItem(DiagnosticResult::STATUS_INFORMATIONAL, "info"));
-        return array($result);
+        if (SettingsServer::isWindows()) {
+            return [];
+        }
+        if (posix_getuid() === 0) {
+            return [DiagnosticResult::singleResult(
+                "php running as root",
+                DiagnosticResult::STATUS_WARNING,
+                "PHP seems to be running as root. Unless you are using Matomo inside a docker container
+                you should check your setup."
+            )];
+        }
+        return [];
     }
 
 

@@ -15,6 +15,9 @@ return [
         DI\get('\Piwik\Plugins\DiagnosticsExtended\Diagnostic\PhpVersionCheck'),
         DI\get('\Piwik\Plugins\DiagnosticsExtended\Diagnostic\DatabaseVersionCheck'),
         DI\get('\Piwik\Plugins\DiagnosticsExtended\Diagnostic\GzipMatomoJsCheck'),
+        DI\get('\Piwik\Plugins\DiagnosticsExtended\Diagnostic\CurlVersionCheck'),
+        DI\get('\Piwik\Plugins\DiagnosticsExtended\Diagnostic\OpensslVersionCheck'),
+        DI\get('\Piwik\Plugins\DiagnosticsExtended\Diagnostic\PhpUserCheck'),
     ]),
 
 ];

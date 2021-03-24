@@ -8,14 +8,12 @@
 
 namespace Piwik\Plugins\DiagnosticsExtended\Diagnostic;
 
-use Piwik\Http;
 use Piwik\Date;
+use Piwik\Http;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResultItem;
-use Piwik\Plugins\DiagnosticsExtended\Diagnostic\IniSettings\IniSetting;
 use Psr\Log\LoggerInterface;
-use function DI\factory;
 
 class PhpVersionCheck implements Diagnostic
 {
