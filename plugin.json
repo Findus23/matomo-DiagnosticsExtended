@@ -8,22 +8,19 @@
     },
     "authors": [
         {
-            "name": "Matomo",
-            "email": "",
-            "homepage": ""
+            "name": "Lukas Winkler",
+            "email": "lukas@matomo.org",
+            "homepage": "https://lw1.at"
         }
     ],
     "support": {
-        "email": "",
-        "issues": "",
-        "forum": "",
-        "irc": "",
-        "wiki": "",
-        "source": "",
-        "docs": "",
-        "rss": ""
+        "email": "lukas@matomo.org",
+        "issues": "https://github.com/Findus23/plugin-DiagnosticsExtended/issues",
+        "forum": "https://forum.matomo.org",
+        "source": "https://github.com/Findus23/plugin-DiagnosticsExtended"
     },
-    "homepage": "",
+    "homepage": "https://lw1.at",
     "license": "GPL v3+",
-    "keywords": []
+    "keywords": [
+    ]
 }

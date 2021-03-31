@@ -27,7 +27,7 @@ class ExampleCheck implements Diagnostic
 
     public function execute()
     {
-        $result = new DiagnosticResult("label");
+        $result = new DiagnosticResult("🧪 label");
         $result->addItem(new DiagnosticResultItem(DiagnosticResult::STATUS_ERROR, "error"));
         $result->addItem(new DiagnosticResultItem(DiagnosticResult::STATUS_WARNING, "warning"));
         $result->addItem(new DiagnosticResultItem(DiagnosticResult::STATUS_OK, "okay"));

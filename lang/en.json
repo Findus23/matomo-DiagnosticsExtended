@@ -1,0 +1,29 @@
+{
+    "DiagnosticsExtended": {
+        "BackportingDisclaimerMariaDB": "(unless the distributor of your MariaDB binary is backporting security patches)",
+        "BackportingDisclaimerPHP": "(unless the distributor of your PHP binary is backporting security patches)",
+        "DatabaseVersionCheckLabel": "Database version",
+        "MatomoJSCheckFailed": "It seems like matomo.js can't be fetched properly.",
+        "MatomoJSCheckGzipped": "matomo.js is delivered gzipped.",
+        "MatomoJSCheckMIMEError": "matomo.js should be delivered with an 'application/javascript' Content-Type. You are using '%s'.",
+        "MatomoJSCheckFailedCurlTip": "try running %s on your server and see if it is able to fetch the file successfully",
+        "DatabaseVersionCheckMariaDBEol": "Your MariaDB version (%1$s) does not receive security support by the MariaDB team anymore (since %2$s). You should update to a newer version",
+        "DatabaseVersionCheckMariaDBNotEol": "Your MariaDB version (%1$s) receives security support by the MariaDB team until %2$s.",
+        "DatabaseVersionCheckMariaDBLatestVersion": "You are using the latest version of MariaDB %s.",
+        "DatabaseVersionCheckMariaDBOutdated": "There is a newer MariaDB patch version (%1$s) available (you are using %2$s/%3$s). You should update to it as soon as possible",
+        "NotificationText": "You have enabled the DiagnosticsExtended plugin. It adds a few more experimental system checks (marked with 🧪) to this page that might help you find issues with your Matomo instance. There might still be a few false positives and false negatives, so if you notice something strange, please report it to the %1$sforum%2$s or %3$screate a GitHub issue%4$s.",
+        "NotificationTitle": "About DiagnosticsExtended",
+        "PhpIniCheckIsDisabled": "%s is enabled",
+        "PhpIniCheckIsEnabled": "%s is enabled",
+        "PhpIniCheckLabel": "php.ini options",
+        "PhpIniCheckShouldBeDisabled": "%s should be enabled",
+        "PhpIniCheckShouldBeEnabled": "%s should be enabled",
+        "PhpVersionCheckEol": "Your PHP version (%1$s) does not receive security support by the PHP team anymore (since %2$s). You should update to a newer version",
+        "PhpVersionCheckLabel": "PHP version",
+        "PhpVersionCheckLatestVersion": "You are using the latest version of PHP %s",
+        "PhpVersionCheckNoInformation": "No information is know about your PHP version (%s)",
+        "PhpVersionCheckNotEol": "Your PHP version (%1$s) receives security support by the PHP team until %2$s.",
+        "PhpVersionCheckNotWorking": "Matomo could not check if your PHP version is up-to-date",
+        "PhpVersionCheckOutdated": "There is a newer PHP patch version (%1$s) available (you are using %2$s). You should update to it as soon as possible"
+    }
+}

@@ -35,7 +35,7 @@ class PhpUserCheck implements Diagnostic
         }
         if (posix_getuid() === 0) {
             return [DiagnosticResult::singleResult(
-                "php running as root",
+                "🧪 php running as root",
                 DiagnosticResult::STATUS_WARNING,
                 "PHP seems to be running as root. Unless you are using Matomo inside a docker container
                 you should check your setup."

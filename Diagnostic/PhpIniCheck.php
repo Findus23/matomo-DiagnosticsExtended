@@ -8,6 +8,7 @@
 
 namespace Piwik\Plugins\DiagnosticsExtended\Diagnostic;
 
+use Piwik\Piwik;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResultItem;
@@ -24,29 +25,38 @@ class PhpIniCheck implements Diagnostic
      * @var IniSetting[]
      */
     private $iniSettings;
+    /**
+     * @var string
+     */
+    private $label;
 
     public function __construct(array $iniSettings, LoggerInterface $logger)
     {
         $this->logger = $logger;
         $this->iniSettings = $iniSettings;
+        $this->label = "🧪 " . Piwik::translate("DiagnosticsExtended_PhpIniCheckLabel");
     }
 
     public function execute()
     {
-        $result = new DiagnosticResult("php.ini checks");
+        $result = new DiagnosticResult($this->label);
         foreach ($this->iniSettings as $setting) {
             $key = $setting::$key;
             if ($this->booleanIni($key) === $setting::$targetValue) {
                 $item = new DiagnosticResultItem(
                     DiagnosticResult::STATUS_OK,
-                    $setting::$targetValue ? "$key is enabled" : "$key is disabled"
+                    $setting::$targetValue
+                        ? Piwik::translate("DiagnosticsExtended_PhpIniCheckIsEnabled", [$key])
+                        : Piwik::translate("DiagnosticsExtended_PhpIniCheckIsDisabled", [$key])
                 );
 
             } else {
                 $status = $setting::$severe ? DiagnosticResult::STATUS_ERROR : DiagnosticResult::STATUS_WARNING;
                 $item = new DiagnosticResultItem(
                     $status,
-                    $setting::$targetValue ? "$key should be enabled" : "$key should be disabled"
+                    $setting::$targetValue
+                        ? Piwik::translate("DiagnosticsExtended_PhpIniCheckShouldBeEnabled", [$key])
+                        : Piwik::translate("DiagnosticsExtended_PhpIniCheckShouldBeDisabled", [$key])
                 );
             }
             $result->addItem($item);

@@ -9,6 +9,7 @@
 namespace Piwik\Plugins\DiagnosticsExtended\Diagnostic;
 
 use Piwik\Http;
+use Piwik\Piwik;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResultItem;
@@ -16,7 +17,7 @@ use Piwik\SettingsPiwik;
 use Piwik\Tracker\TrackerCodeGenerator;
 use Psr\Log\LoggerInterface;
 
-class GzipMatomoJsCheck implements Diagnostic
+class MatomoJsCheck implements Diagnostic
 {
     /**
      * @var LoggerInterface
@@ -37,7 +38,7 @@ class GzipMatomoJsCheck implements Diagnostic
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
-        $this->label = "matomo.js gzip";
+        $this->label = "🧪 " . "matomo.js"; # no need to make it translatable
     }
 
 
@@ -62,18 +63,23 @@ class GzipMatomoJsCheck implements Diagnostic
             $headers = $response["headers"];
             $data = $response["data"];
             if ($status != 200 || strpos($data, "c80d50af7d3db9be66a4d0a86db0286e4fd33292") === false) {
-                return [DiagnosticResult::singleResult(
-                    $this->label,
+                $result = new DiagnosticResult($this->label);
+                $result->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_INFORMATIONAL,
-                    "It seems like matomo.js can't be fetched properly"
-                )];
+                    Piwik::translate("DiagnosticsExtended_MatomoJSCheckFailed")
+                ));
+                $result->setLongErrorMessage(Piwik::translate("DiagnosticsExtended_MatomoJSCheckFailedCurlTip", [
+                    "<code>curl -v $checkURL</code>"
+                ]));
+                return [$result];
             }
             $results = new DiagnosticResult($this->label);
             $contentType = $headers["content-type"];
             if ($contentType !== "application/javascript") {
                 $results->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_WARNING,
-                    "matomo.js should be delivered with an 'application/javascript' Content-Type. You are using '$contentType'."
+                    Piwik::translate("DiagnosticsExtended_MatomoJSCheckMIMEError",
+                        [$contentType])
                 ));
 
             }
@@ -81,7 +87,7 @@ class GzipMatomoJsCheck implements Diagnostic
             if ($contentEncoding === "gzip") {
                 $results->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_OK,
-                    "matomo.js is delivered gzipped."
+                    Piwik::translate("DiagnosticsExtended_MatomoJSCheckGzipped")
                 ));
 
             } else {

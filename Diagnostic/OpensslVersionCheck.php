@@ -33,7 +33,7 @@ class OpensslVersionCheck implements Diagnostic
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
-        $this->label = "OpenSSL version check";
+        $this->label = "🧪 OpenSSL version check";
     }
 
     /**

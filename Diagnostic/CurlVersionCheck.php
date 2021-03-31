@@ -36,7 +36,7 @@ class CurlVersionCheck implements Diagnostic
     public function __construct(LoggerInterface $logger, \Matomo\Cache\Lazy $lazyCache)
     {
         $this->logger = $logger;
-        $this->label = "curl version check";
+        $this->label = "🧪 curl version check";
         $this->lazyCache = $lazyCache;
     }
 

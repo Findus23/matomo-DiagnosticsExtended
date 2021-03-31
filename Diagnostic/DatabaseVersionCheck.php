@@ -11,6 +11,7 @@ namespace Piwik\Plugins\DiagnosticsExtended\Diagnostic;
 use Piwik\Date;
 use Piwik\Db;
 use Piwik\Http;
+use Piwik\Piwik;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResultItem;
@@ -37,7 +38,7 @@ class DatabaseVersionCheck implements Diagnostic
     public function __construct(LoggerInterface $logger, \Matomo\Cache\Lazy $lazyCache)
     {
         $this->logger = $logger;
-        $this->label = "Database version check";
+        $this->label = "🧪 " . Piwik::translate("DiagnosticsExtended_DatabaseVersionCheckLabel");
         $this->lazyCache = $lazyCache;
     }
 
@@ -78,29 +79,37 @@ class DatabaseVersionCheck implements Diagnostic
                 if (version_compare($currentVersion, $latestVersion, ">=")) {
                     $results->addItem(new DiagnosticResultItem(
                         DiagnosticResult::STATUS_OK,
-                        "You are using the latest version of MariaDB " . $minorVersion
+                        Piwik::translate("DiagnosticsExtended_PhpVersionCheckLatestVersion",
+                            [$minorVersion])
                     ));
                 } else {
                     $results->addItem(new DiagnosticResultItem(
                         DiagnosticResult::STATUS_WARNING,
-                        "There is a newer MariaDB patch version ($latestVersion) available (you are using $version/$currentVersion). 
-                    You should update to it as soon as possible 
-                    (unless the distributor of your MariaDB binary is backporting security patches)."
+                        Piwik::translate("DiagnosticsExtended_DatabaseVersionCheckMariaDBOutdated", [
+                            $latestVersion, $version, $currentVersion
+                        ])
+                        . " "
+                        . Piwik::translate("DiagnosticsExtended_BackportingDisclaimerMariaDB")
+                        . "."
                     ));
                 }
+                $formattedDate = (Date::factory($versionInfo["eol"]))->getLocalized(Date::DATE_FORMAT_LONG);
                 if (new \DateTime() > new \DateTime($versionInfo["eol"])) {
                     $results->addItem(new DiagnosticResultItem(
                         DiagnosticResult::STATUS_WARNING,
-                        "Your MariaDB version ($currentVersion) does not recieve security support by the MariaDB
-                    team anymore. You should update to a newer version 
-                    (unless the distributor of your PHP binary is backporting security patches)."
+                        Piwik::translate("DiagnosticsExtended_DatabaseVersionCheckMariaDBEol", [
+                            $currentVersion, $formattedDate
+                        ])
+                        . " "
+                        . Piwik::translate("DiagnosticsExtended_BackportingDisclaimerMariaDB")
+                        . "."
                     ));
                 } else {
-                    $formattedDate = (Date::factory($versionInfo["eol"]))->getLocalized(Date::DATE_FORMAT_LONG);
                     $results->addItem(new DiagnosticResultItem(
                         DiagnosticResult::STATUS_OK,
-                        "Your MariaDB version ($minorVersion) receives security support by the MariaDB
-                    team until $formattedDate."
+                        Piwik::translate("DiagnosticsExtended_DatabaseVersionCheckMariaDBNotEol", [
+                            $minorVersion, $formattedDate
+                        ])
                     ));
                 }
                 return [$results];

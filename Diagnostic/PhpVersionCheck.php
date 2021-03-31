@@ -10,6 +10,7 @@ namespace Piwik\Plugins\DiagnosticsExtended\Diagnostic;
 
 use Piwik\Date;
 use Piwik\Http;
+use Piwik\Piwik;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResultItem;
@@ -36,7 +37,7 @@ class PhpVersionCheck implements Diagnostic
     public function __construct(LoggerInterface $logger, \Matomo\Cache\Lazy $lazyCache)
     {
         $this->logger = $logger;
-        $this->label = "php version check";
+        $this->label = "🧪 " . Piwik::translate("DiagnosticsExtended_PhpVersionCheckLabel");
         $this->lazyCache = $lazyCache;
     }
 
@@ -81,35 +82,45 @@ class PhpVersionCheck implements Diagnostic
             if (version_compare($currentVersion, $latestVersion, ">=")) {
                 $results->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_OK,
-                    "You are using the latest version of PHP " . $minorVersion
+                    Piwik::translate("DiagnosticsExtended_PhpVersionCheckLatestVersion", [$minorVersion])
                 ));
             } else {
                 $results->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_WARNING,
-                    "There is a newer PHP patch version ($latestVersion) available (you are using $currentVersion). 
-                    You should update to it as soon as possible 
-                    (unless the distributor of your PHP binary is backporting security patches)."
+                    Piwik::translate("DiagnosticsExtended_PhpVersionCheckOutdated", [
+                        $latestVersion, $currentVersion
+                    ])
+                    . " "
+                    . Piwik::translate("DiagnosticsExtended_BackportingDisclaimerPHP")
+                    . "."
                 ));
             }
             if (empty($this->eolDates[$minorVersion])) {
                 $results->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_INFORMATIONAL,
-                    "No information is know about your PHP version ($currentVersion)."
+                    Piwik::translate("DiagnosticsExtended_PhpVersionCheckNoInformation", [
+                        $latestVersion, $currentVersion
+                    ])
                 ));
 
             } elseif (new \DateTime() > new \DateTime($this->eolDates[$minorVersion])) {
+                $formattedDate = (Date::factory($this->eolDates[$minorVersion]))->getLocalized(Date::DATE_FORMAT_LONG);
                 $results->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_WARNING,
-                    "Your PHP version ($currentVersion) does not recieve security support by the PHP
-                    team anymore. You should update to a newer version 
-                    (unless the distributor of your PHP binary is backporting security patches)."
+                    Piwik::translate("DiagnosticsExtended_PhpVersionCheckEol", [
+                        $currentVersion, $formattedDate
+                    ])
+                    . " "
+                    . Piwik::translate("DiagnosticsExtended_BackportingDisclaimerPHP")
+                    . "."
                 ));
             } else {
                 $formattedDate = (Date::factory($this->eolDates[$minorVersion]))->getLocalized(Date::DATE_FORMAT_LONG);
                 $results->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_OK,
-                    "Your PHP version ($minorVersion) receives security support by the PHP
-                    team until $formattedDate."
+                    Piwik::translate("DiagnosticsExtended_PhpVersionCheckEol", [
+                        $minorVersion, $formattedDate
+                    ])
                 ));
             }
         } catch (\Exception $e) {
@@ -124,7 +135,7 @@ class PhpVersionCheck implements Diagnostic
         return DiagnosticResult::singleResult(
             $this->label,
             DiagnosticResult::STATUS_INFORMATIONAL,
-            "Matomo could not check if your PHP version is up-to-date"
+            Piwik::translate("DiagnosticsExtended_PhpVersionCheckNotWorking")
         );
     }
 }
