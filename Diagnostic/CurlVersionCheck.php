@@ -9,6 +9,7 @@
 namespace Piwik\Plugins\DiagnosticsExtended\Diagnostic;
 
 use Piwik\Http;
+use Piwik\Piwik;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Psr\Log\LoggerInterface;
@@ -36,7 +37,7 @@ class CurlVersionCheck implements Diagnostic
     public function __construct(LoggerInterface $logger, \Matomo\Cache\Lazy $lazyCache)
     {
         $this->logger = $logger;
-        $this->label = "🧪 curl version check";
+        $this->label = "🧪 " . Piwik::translate("DiagnosticsExtended_CurlVersionCheckLabel");
         $this->lazyCache = $lazyCache;
     }
 
@@ -50,7 +51,7 @@ class CurlVersionCheck implements Diagnostic
             return [DiagnosticResult::singleResult(
                 $this->label,
                 DiagnosticResult::STATUS_INFORMATIONAL,
-                "Your PHP setup doesn't use curl, so there is nothing to check"
+                Piwik::translate("DiagnosticsExtended_CurlVersionCheckNoCurl")
             )];
         }
         $version = curl_version()["version"];
@@ -86,22 +87,22 @@ class CurlVersionCheck implements Diagnostic
                 return [DiagnosticResult::singleResult(
                     $this->label,
                     DiagnosticResult::STATUS_ERROR,
-                    "Your curl version might be vulnerable against this vulnerabilities 
-                    (unless the distributor of your curl binary is backporting security patches): "
+                    Piwik::translate("DiagnosticsExtended_CurlVersionCheckVulnerable")
+                    . " "
                     . join(", ", $vulns)
                 )];
             } else {
                 return [DiagnosticResult::singleResult(
                     $this->label,
                     DiagnosticResult::STATUS_OK,
-                    "It seems like there are no known vulnerabilities in your curl version"
+                    Piwik::translate("DiagnosticsExtended_CurlVersionCheckUpToDate")
                 )];
             }
         } catch (\Exception $e) {
             return [DiagnosticResult::singleResult(
                 $this->label,
                 DiagnosticResult::STATUS_INFORMATIONAL,
-                "Matomo could not check if your curl version has vulnerabilities"
+                Piwik::translate("DiagnosticsExtended_CurlVersionCheckFailed")
             )];
         }
 

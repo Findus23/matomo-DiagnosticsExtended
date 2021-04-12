@@ -93,8 +93,7 @@ class MatomoJsCheck implements Diagnostic
             } else {
                 $results->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_WARNING,
-                    "matomo.js is not delivered gzipped. 
-                    You might want to set up gzip for .js files as it can reduce the size of the file by up to 60 %."
+                    Piwik::translate("DiagnosticsExtended_MatomoJSCheckNotGzipped")
                 ));
             }
             return [$results];
@@ -103,9 +102,8 @@ class MatomoJsCheck implements Diagnostic
             return [DiagnosticResult::singleResult(
                 $this->label,
                 DiagnosticResult::STATUS_INFORMATIONAL,
-                "Matomo could not check if your matomo.js can be fetched properly"
+                Piwik::translate("DiagnosticsExtended_MatomoJSCheckUnknown")
             )];
-
         }
     }
 }

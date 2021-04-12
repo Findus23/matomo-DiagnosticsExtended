@@ -8,6 +8,7 @@
 
 namespace Piwik\Plugins\DiagnosticsExtended\Diagnostic;
 
+use Piwik\Piwik;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Psr\Log\LoggerInterface;
@@ -33,7 +34,7 @@ class OpensslVersionCheck implements Diagnostic
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
-        $this->label = "🧪 OpenSSL version check";
+        $this->label = "🧪 " . Piwik::translate("DiagnosticsExtended_OpensslVersionCheckLabel");
     }
 
     /**
@@ -44,7 +45,7 @@ class OpensslVersionCheck implements Diagnostic
         return DiagnosticResult::singleResult(
             $this->label,
             DiagnosticResult::STATUS_INFORMATIONAL,
-            "Your PHP setup doesn't use OpenSSL or curl, so there is nothing to check"
+            Piwik::translate("DiagnosticsExtended_OpensslVersionCheckNoOpenssl")
         );
     }
 
@@ -73,15 +74,13 @@ class OpensslVersionCheck implements Diagnostic
             return [DiagnosticResult::singleResult(
                 $this->label,
                 DiagnosticResult::STATUS_WARNING,
-                "Your OpenSSL version ($version) is pretty old. 
-                Check if there are known vulnerabilities for it and update it if necessary."
+                Piwik::translate("DiagnosticsExtended_OpensslVersionCheckOutdated", [$version])
             )];
         } else {
             return [DiagnosticResult::singleResult(
                 $this->label,
                 DiagnosticResult::STATUS_INFORMATIONAL,
-                "Your OpenSSL version ($version) is not really old. 
-                Nevertheless, check if there are known vulnerabilities for it and update it if necessary."
+                Piwik::translate("DiagnosticsExtended_OpensslVersionCheckNotOutdated", [$version])
             )];
         }
     }

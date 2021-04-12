@@ -8,6 +8,7 @@
 
 namespace Piwik\Plugins\DiagnosticsExtended\Diagnostic;
 
+use Piwik\Piwik;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Piwik\SettingsServer;
@@ -19,10 +20,15 @@ class PhpUserCheck implements Diagnostic
      * @var LoggerInterface
      */
     private $logger;
+    /**
+     * @var string
+     */
+    private $label;
 
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
+        $this->label = "🧪 " . Piwik::translate("DiagnosticsExtended_PhpUserCheckLabel");
     }
 
     /**
@@ -35,10 +41,9 @@ class PhpUserCheck implements Diagnostic
         }
         if (posix_getuid() === 0) {
             return [DiagnosticResult::singleResult(
-                "🧪 php running as root",
+                $this->label,
                 DiagnosticResult::STATUS_WARNING,
-                "PHP seems to be running as root. Unless you are using Matomo inside a docker container
-                you should check your setup."
+                Piwik::translate("DiagnosticsExtended_PhpUserCheckWarning")
             )];
         }
         return [];
