@@ -18,7 +18,7 @@
         "MatomoJSCheckMIMEError": "matomo.js should be delivered with an 'application/javascript' Content-Type. You are using '%s'.",
         "MatomoJSCheckNotGzipped": "matomo.js is not delivered gzipped. You might want to set up gzip for .js files as it can reduce the size of the file by up to 60 %.",
         "MatomoJSCheckUnknown": "Matomo could not check if your matomo.js can be fetched properly.",
-        "NotificationText": "You have enabled the DiagnosticsExtended plugin. It adds a few more experimental system checks (marked with 🧪) to this page that might help you find issues with your Matomo instance. There might still be a few false positives and false negatives, so if you notice something strange, please report it to the %1$sforum%2$s or %3$screate a GitHub issue%4$s.",
+        "NotificationText": "You have enabled the DiagnosticsExtended plugin. It adds a few more experimental system checks (marked with 🧪) to this page that might help you find issues with your Matomo instance. There might still be a few false positives and false negatives, so don't take the results as a truth, but check yourself if something is wrong. Please report issues with the plugin to the %1$sforum%2$s or %3$screate a GitHub issue%4$s so that the checks can be improved.",
         "NotificationTitle": "About DiagnosticsExtended",
         "OpensslVersionCheckLabel": "OpenSSL version check",
         "OpensslVersionCheckNoOpenssl": "Your PHP setup doesn't use OpenSSL or curl, so there is nothing to check.",
