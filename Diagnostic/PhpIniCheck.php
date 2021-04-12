@@ -13,6 +13,7 @@ use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResultItem;
 use Piwik\Plugins\DiagnosticsExtended\Diagnostic\IniSettings\IniSetting;
+use Piwik\Plugins\DiagnosticsExtended\Utils;
 use Psr\Log\LoggerInterface;
 
 class PhpIniCheck implements Diagnostic
@@ -42,7 +43,7 @@ class PhpIniCheck implements Diagnostic
         $result = new DiagnosticResult($this->label);
         foreach ($this->iniSettings as $setting) {
             $key = $setting::$key;
-            if ($this->booleanIni($key) === $setting::$targetValue) {
+            if (Utils::booleanIni($key) === $setting::$targetValue) {
                 $item = new DiagnosticResultItem(
                     DiagnosticResult::STATUS_OK,
                     $setting::$targetValue
@@ -65,29 +66,6 @@ class PhpIniCheck implements Diagnostic
     }
 
 
-    private function booleanIni(string $key): bool
-    {
-        return $this->IniValueToBoolean(ini_get($key));
-    }
-
-    private function IniValueToBoolean(string $iniValue): bool
-    {
-        switch (strtolower($iniValue)) {
-            case "on":
-            case "true":
-            case "yes":
-            case "1":
-                return true;
-            case "off":
-            case "false":
-            case "no":
-            case "0":
-            case "":
-                return false;
-            default:
-                return $iniValue;
-        }
-    }
 
 
 }
