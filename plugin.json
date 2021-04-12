@@ -4,7 +4,7 @@
     "version": "0.1.0",
     "theme": false,
     "require": {
-        "matomo": ">=4.2.1-stable,<5.0.0-b1"
+        "matomo": ">=4.2.0,<5.0.0-b1"
     },
     "authors": [
         {
@@ -22,5 +22,7 @@
     "homepage": "https://lw1.at",
     "license": "GPL v3+",
     "keywords": [
+        "system check",
+        "debugging"
     ]
 }
