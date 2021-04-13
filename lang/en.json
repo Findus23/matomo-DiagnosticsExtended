@@ -6,7 +6,7 @@
         "CurlVersionCheckLabel": "curl version check",
         "CurlVersionCheckNoCurl": "Your PHP setup doesn't use curl, so there is nothing to check.",
         "CurlVersionCheckUpToDate": "It seems like there are no known vulnerabilities in your curl version.",
-        "CurlVersionCheckVulnerable": "Your curl version might be vulnerable against these vulnerabilities (unless the distributor of your curl binary is backporting security patches):",
+        "CurlVersionCheckVulnerable": "Your curl version (%s) might be vulnerable against these vulnerabilities (unless the distributor of your curl binary is backporting security patches):",
         "DatabaseVersionCheckLabel": "Database version",
         "DatabaseVersionCheckMariaDBEol": "Your MariaDB version (%1$s) does not receive security support by the MariaDB team anymore (since %2$s). You should update to a newer version",
         "DatabaseVersionCheckMariaDBLatestVersion": "You are using the latest version of MariaDB %s.",
