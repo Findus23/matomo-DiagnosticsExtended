@@ -61,7 +61,7 @@ class PhpVersionCheck implements Diagnostic
      */
     public function execute()
     {
-        $minorVersion = PHP_MAJOR_VERSION . "." . PHP_MINOR_VERSION;
+        $minorVersion = "7.3";
         $currentVersion = $minorVersion . "." . PHP_RELEASE_VERSION;
         $cacheId = 'DiagnosticsExtended_PhpVersion_' . $minorVersion;
 
@@ -118,7 +118,7 @@ class PhpVersionCheck implements Diagnostic
                 $formattedDate = (Date::factory($this->eolDates[$minorVersion]))->getLocalized(Date::DATE_FORMAT_LONG);
                 $results->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_OK,
-                    Piwik::translate("DiagnosticsExtended_PhpVersionCheckEol", [
+                    Piwik::translate("DiagnosticsExtended_PhpVersionCheckNotEol", [
                         $minorVersion, $formattedDate
                     ])
                 ));

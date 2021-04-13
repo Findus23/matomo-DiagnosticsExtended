@@ -35,7 +35,7 @@
         "PhpIniCheckIsDisabled": "%s is enabled",
         "PhpIniCheckIsEnabled": "%s is enabled",
         "PhpIniCheckLabel": "php.ini options",
-        "PhpIniCheckShouldBeDisabled": "%s should be enabled",
+        "PhpIniCheckShouldBeDisabled": "%s should be disabled",
         "PhpIniCheckShouldBeEnabled": "%s should be enabled",
         "PhpUserCheckLabel": "PHP running as root",
         "PhpUserCheckWarning": "PHP seems to be running as root. Unless you are using Matomo inside a docker container you should check your setup.",
