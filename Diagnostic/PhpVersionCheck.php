@@ -61,7 +61,7 @@ class PhpVersionCheck implements Diagnostic
      */
     public function execute()
     {
-        $minorVersion = "7.3";
+        $minorVersion = PHP_MAJOR_VERSION . "." . PHP_MINOR_VERSION;
         $currentVersion = $minorVersion . "." . PHP_RELEASE_VERSION;
         $cacheId = 'DiagnosticsExtended_PhpVersion_' . $minorVersion;
 
