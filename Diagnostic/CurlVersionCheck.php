@@ -95,7 +95,7 @@ class CurlVersionCheck implements Diagnostic
                 return [DiagnosticResult::singleResult(
                     $this->label,
                     DiagnosticResult::STATUS_OK,
-                    Piwik::translate("DiagnosticsExtended_CurlVersionCheckUpToDate")
+                    Piwik::translate("DiagnosticsExtended_CurlVersionCheckUpToDate", [$version])
                 )];
             }
         } catch (\Exception $e) {
