@@ -6,7 +6,7 @@ This plugin adds a collection of new checks to the Matomo System Check page. The
 
 Please report back any unexpected results you come across or other feedback so that the checks can be improved and possible integrated into Matomo core once they work reliably.
 
-### Currently supported test:
+### Currently supported tests:
 
 - curl version check
 - MySQL/MariaDB version check
