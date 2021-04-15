@@ -14,6 +14,7 @@ use Piwik\Piwik;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResultItem;
+use Piwik\SettingsPiwik;
 use Psr\Log\LoggerInterface;
 
 class PhpVersionCheck implements Diagnostic
@@ -68,6 +69,9 @@ class PhpVersionCheck implements Diagnostic
         $url = "https://php.net/releases/?json=1&version=" . $minorVersion;
         $timeout = self::SOCKET_TIMEOUT;
         try {
+            if (!SettingsPiwik::isInternetEnabled()) {
+                throw new \Exception("internet is disabled");
+            }
             $response = $this->lazyCache->fetch($cacheId);
             if (!$response) {
                 $response = Http::sendHttpRequest($url, $timeout);

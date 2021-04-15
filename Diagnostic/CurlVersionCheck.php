@@ -12,6 +12,7 @@ use Piwik\Http;
 use Piwik\Piwik;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
+use Piwik\SettingsPiwik;
 use Psr\Log\LoggerInterface;
 
 class CurlVersionCheck implements Diagnostic
@@ -59,6 +60,9 @@ class CurlVersionCheck implements Diagnostic
         $url = "https://curl.se/docs/vuln.pm";
         $timeout = self::SOCKET_TIMEOUT;
         try {
+            if (!SettingsPiwik::isInternetEnabled()) {
+                throw new \Exception("internet is disabled");
+            }
             $response = $this->lazyCache->fetch(self::CACHEID);
             if (!$response) {
                 $response = Http::sendHttpRequest($url, $timeout);

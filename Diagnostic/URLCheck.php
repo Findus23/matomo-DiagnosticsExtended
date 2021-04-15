@@ -48,6 +48,13 @@ class URLCheck implements Diagnostic
 
     public function execute()
     {
+        if (!SettingsPiwik::isInternetEnabled()) {
+            return [DiagnosticResult::singleResult(
+                $this->label,
+                DiagnosticResult::STATUS_INFORMATIONAL,
+                Piwik::translate("DiagnosticsExtended_URLCheckSkipped")
+            )]
+        }
         //TODO: don't check if running in development mode
         $result = new DiagnosticResult($this->label);
         $result->addItem($this->checkConfigIni());

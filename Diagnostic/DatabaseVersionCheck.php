@@ -15,6 +15,7 @@ use Piwik\Piwik;
 use Piwik\Plugins\Diagnostics\Diagnostic\Diagnostic;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResult;
 use Piwik\Plugins\Diagnostics\Diagnostic\DiagnosticResultItem;
+use Piwik\SettingsPiwik;
 use Psr\Log\LoggerInterface;
 
 class DatabaseVersionCheck implements Diagnostic
@@ -66,6 +67,9 @@ class DatabaseVersionCheck implements Diagnostic
             $url = "https://endoflife.date/api/mariadb/$minorVersion.json";
             $timeout = self::SOCKET_TIMEOUT;
             try {
+                if (!SettingsPiwik::isInternetEnabled()) {
+                    throw new \Exception("internet is disabled");
+                }
                 $response = $this->lazyCache->fetch($cacheId);
                 if (!$response) {
                     $response = Http::sendHttpRequest($url, $timeout);

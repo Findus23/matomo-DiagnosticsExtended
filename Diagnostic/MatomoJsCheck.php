@@ -47,6 +47,9 @@ class MatomoJsCheck implements Diagnostic
      */
     public function execute()
     {
+        if (!SettingsPiwik::isInternetEnabled()) {
+            throw new \Exception("internet is disabled");
+        }
         $matomoUrl = SettingsPiwik::getPiwikUrl();
         $generator = new TrackerCodeGenerator();
         $matomoJs = $generator->getJsTrackerEndpoint();
