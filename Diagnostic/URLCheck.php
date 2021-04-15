@@ -53,7 +53,7 @@ class URLCheck implements Diagnostic
                 $this->label,
                 DiagnosticResult::STATUS_INFORMATIONAL,
                 Piwik::translate("DiagnosticsExtended_URLCheckSkipped")
-            )]
+            )];
         }
         //TODO: don't check if running in development mode
         $result = new DiagnosticResult($this->label);
