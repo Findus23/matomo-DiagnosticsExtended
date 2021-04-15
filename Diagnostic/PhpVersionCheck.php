@@ -124,7 +124,8 @@ class PhpVersionCheck implements Diagnostic
                 ));
             }
         } catch (\Exception $e) {
-            $this->logger->warning($e);
+            $this->logger->info("failed to check PHP version");
+            $this->logger->info($e);
             return [$this->testCouldNotRunResult()];
         }
         return [$results];
