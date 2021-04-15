@@ -14,7 +14,7 @@
         "DatabaseVersionCheckMariaDBOutdated": "There is a newer MariaDB patch version (%1$s) available (you are using %2$s/%3$s). You should update to it as soon as possible",
         "MatomoJSCheckFailed": "It seems like matomo.js can't be fetched properly.",
         "MatomoJSCheckFailedCurlTip": "try running %s on your server and see if it is able to fetch the file successfully",
-        "MatomoJSCheckGzipped": "matomo.js is delivered gzipped.",
+        "MatomoJSCheckGzipped": "matomo.js is delivered compressed.",
         "MatomoJSCheckMIMEError": "matomo.js should be delivered with an 'application/javascript' Content-Type. You are using '%s'.",
         "MatomoJSCheckNotGzipped": "matomo.js is not delivered gzipped. You might want to set up gzip for .js files as it can reduce the size of the file by up to 60 %.",
         "MatomoJSCheckUnknown": "Matomo could not check if your matomo.js can be fetched properly.",

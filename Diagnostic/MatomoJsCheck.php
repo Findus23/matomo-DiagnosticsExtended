@@ -92,7 +92,7 @@ class MatomoJsCheck implements Diagnostic
 
             }
             $contentEncoding = $headers["content-encoding"];
-            if ($contentEncoding === "gzip") {
+            if ($contentEncoding === "gzip" || $contentEncoding === "br") {
                 $results->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_OK,
                     Piwik::translate("DiagnosticsExtended_MatomoJSCheckGzipped")
