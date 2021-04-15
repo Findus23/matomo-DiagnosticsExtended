@@ -1,6 +1,11 @@
 ## Changelog
 
-### 0.1.3
+### 0.1.4
+
+fix the repository URL
+
+
+### 0.1.3 (unpublished)
 
 - remove logged warning from PHP check
 - don't fail if headers are missing
