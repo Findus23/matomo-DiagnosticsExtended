@@ -36,7 +36,7 @@ class PhpUserCheck implements Diagnostic
      */
     public function execute()
     {
-        if (SettingsServer::isWindows()) {
+        if (SettingsServer::isWindows()|| !function_exists("posix_getuid")) {
             return [];
         }
         if (posix_getuid() === 0) {

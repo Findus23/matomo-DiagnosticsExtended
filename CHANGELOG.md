@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.1.6
+
+skip user check if `posix_getuid()` doesn't exist
+
 ### 0.1.5
 
 fix a warning when `opcache_get_status()` is not allowed
