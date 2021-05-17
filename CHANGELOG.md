@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.1.5
+
+fix a warning when `opcache_get_status()` is not allowed
+
 ### 0.1.4
 
 fix the repository URL

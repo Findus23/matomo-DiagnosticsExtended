@@ -48,7 +48,7 @@ class OpcacheCheck implements Diagnostic
             ));
             return [$result];
         } else {
-            $status = opcache_get_status();
+            $status = @opcache_get_status();
             $memoryUsage = $status["memory_usage"];
             $interned = $status["interned_strings_usage"];
             $statistics = $status["opcache_statistics"];
