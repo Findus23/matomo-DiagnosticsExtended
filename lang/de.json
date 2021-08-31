@@ -1,1 +1,8 @@
-{}
+{
+    "DiagnosticsExtended": {
+        "BackportingDisclaimerPHP": "(es sei denn, der Distributor Ihrer PHP-Binärdatei portiert Sicherheitspatches zurück)",
+        "BackportingDisclaimerMariaDB": "(es sei denn, der Distributor Ihrer MariaDB-Binärdatei portiert Sicherheitspatches zurück)",
+        "CurlVersionCheckFailed": "Matomo konnte nicht überprüfen, ob Ihre curl-Version Sicherheitslücken aufweist.",
+        "CurlVersionCheckNoCurl": "Ihr PHP-Setup verwendet curl nicht, es gibt also nichts zu überprüfen."
+    }
+}
