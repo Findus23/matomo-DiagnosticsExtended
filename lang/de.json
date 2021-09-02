@@ -1,8 +1,36 @@
 {
     "DiagnosticsExtended": {
-        "BackportingDisclaimerPHP": "(es sei denn, der Distributor Ihrer PHP-Binärdatei portiert Sicherheitspatches zurück)",
         "BackportingDisclaimerMariaDB": "(es sei denn, der Distributor Ihrer MariaDB-Binärdatei portiert Sicherheitspatches zurück)",
+        "BackportingDisclaimerPHP": "(es sei denn, der Distributor Ihrer PHP-Binärdatei portiert Sicherheitspatches zurück)",
         "CurlVersionCheckFailed": "Matomo konnte nicht überprüfen, ob Ihre curl-Version Sicherheitslücken aufweist.",
-        "CurlVersionCheckNoCurl": "Ihr PHP-Setup verwendet curl nicht, es gibt also nichts zu überprüfen."
+        "CurlVersionCheckLabel": "curl Versionsprüfung",
+        "CurlVersionCheckNoCurl": "Ihr PHP-Setup verwendet curl nicht, es gibt also nichts zu überprüfen.",
+        "CurlVersionCheckUpToDate": "Es scheint keine bekannten Schwachstellen in Ihrer curl Version zu geben (%s).",
+        "CurlVersionCheckVulnerable": "Ihre curl Version (%s) ist möglicherweise über diese Schwachsellen verwundbar (es sei denn, der Distributor Ihrer curl Binaries unterstützt zurückportierte Security Patches):",
+        "DatabaseVersionCheckLabel": "Datenbank Version",
+        "DatabaseVersionCheckMariaDBEol": "Ihre MariaDB Version (%1$s) erhält keinen Sicherheitssupport mehr durch das MariaDB Team (seit %2$s). Sie sollten auf eine neuere Version aktualisieren",
+        "DatabaseVersionCheckMariaDBLatestVersion": "Sie verwenden die aktuelle Version von MariaDB %s.",
+        "DatabaseVersionCheckMariaDBNotEol": "Ihre MariaDB Version (%1$s) erhält Sicherheitssupport durch das MariaDB Team bis %2$s.",
+        "DatabaseVersionCheckMariaDBOutdated": "Es ist eine neuere MariaDB Patch Version (%1$s) verfügbar (Sie verwenden %2$s/%3$s). Sie sollten so schnell wie möglich auf die neue Version aktualisieren",
+        "MatomoJSCheckFailed": "So wie es aussieht, kann matomo.js nicht korrekt abgerufen werden.",
+        "MatomoJSCheckGzipped": "matomo.js wurde komprimiert geliefert.",
+        "MatomoJSCheckUnknown": "Matomo kann nicht prüfen ob Ihre matomo.js korrekt geliefert werden kann.",
+        "NotificationTitle": "Über DiagnosticsExtended",
+        "OpensslVersionCheckLabel": "OpenSSL Versionsprüfung",
+        "OpensslVersionCheckNoOpenssl": "Ihre PHP Installation verwendet weder OpenSSL noch curl, deshalb gibt es nichts zu prüfen.",
+        "PhpIniCheckIsDisabled": "%s ist aktiviert",
+        "PhpIniCheckIsEnabled": "%s ist aktiviert",
+        "PhpIniCheckLabel": "php.ini Optionen",
+        "PhpIniCheckShouldBeDisabled": "%s sollte deaktiviert sein",
+        "PhpIniCheckShouldBeEnabled": "%s sollte aktiviert sein",
+        "PhpUserCheckLabel": "PHP läuft als root",
+        "PhpVersionCheckLabel": "PHP Version",
+        "PhpVersionCheckLatestVersion": "Sie verwenden die aktuellste Version von PHP %s",
+        "PhpVersionCheckNoInformation": "Keine Informationen über Ihre PHP Version verfügbar (%s)",
+        "PhpVersionCheckNotWorking": "Matomo konnte nicht prüfen, ob Ihre PHP Version auf dem neuesten Stand ist",
+        "URLCheckError": "%s sollte niemals öffentlich sein, ist es aber. Bitte prüfen Sie Ihre Webserverkonfiguration.",
+        "URLCheckLabel": "Dateien, die nicht öffentlich sein sollten",
+        "URLCheckOk": "%s scheint nicht öffentlich erreichbar zu sein",
+        "URLCheckSkipped": "Internet Features sind deaktiviert, deshalb wurde diese Prüfung übersprungen."
     }
 }
