@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.1.7
+
+Add German and Turkish translation
+
 ### 0.1.6
 
 skip user check if `posix_getuid()` doesn't exist
