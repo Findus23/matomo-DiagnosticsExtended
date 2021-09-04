@@ -1,1 +1,23 @@
-{}
+{
+    "DiagnosticsExtended": {
+        "BackportingDisclaimerMariaDB": "(εκτός αν ο διανομέας του εκτελέσιμου της MariaDB ενσωματώνει διορθώσεις ασφαλείας)",
+        "BackportingDisclaimerPHP": "(εκτός αν ο διανομέας του εκτελέσιμου της PHP ενσωματώνει διορθώσεις ασφαλείας)",
+        "CurlVersionCheckFailed": "Το Matomo δεν μπόρεσε να ελέγξει αν η έκδοσή σας της curl έχει ευπάθειες.",
+        "CurlVersionCheckLabel": "έλεγχος έκδοσης curl",
+        "CurlVersionCheckNoCurl": "Η PHP σας δεν χρησιμοποιεί curl, οπότε δεν υπάρχει κάτι για έλεγχο.",
+        "CurlVersionCheckUpToDate": "Φαίνεται να υπάρχουν ορισμένες γνωστές ευπάθειες στην έκδοσή σας του curl (%s).",
+        "CurlVersionCheckVulnerable": "Η έκδοσή σας του curl (%s) ενδέχεται να είναι επισφαλής σε ορισμένες ευπάθειες (εκτός αν ο διανομέας του εκτελέσιμου του curl ενσωματώνει διορθώσεις ασφαλείας):",
+        "DatabaseVersionCheckLabel": "Έκδοσης Βάσης Δεδομένων",
+        "DatabaseVersionCheckMariaDBEol": "Η έκδοσή σας της MariaDB (%1$s) δεν λαμβάνει πλέον υποστήριξη για ασφάλεια από την ομάδα της MariaDB (από %2$s). Πρέπει να αναβαθμίσετε σε νεότερη έκδοση",
+        "DatabaseVersionCheckMariaDBLatestVersion": "Χρησιμοποιείτε την τελευταία έκδοση της MariaDB %s.",
+        "DatabaseVersionCheckMariaDBNotEol": "Η έκδοσή σας της MariaDB (%1$s) υποστηρίζεται για την ασφάλεια από την ομάδα της MariaDB μέχρι %2$s.",
+        "DatabaseVersionCheckMariaDBOutdated": "Υπάρχει διαθέσιμη νεότερη έκδοση διόρθωσης (%1$s) της MariaDB (χρησιμοποιείτε %2$s %3$s).Πρέπει να αναβαθμίσετε σε αυτήν το συντομότερο",
+        "MatomoJSCheckFailed": "Φαίνεται ότι δεν είναι δυνατή η σωστή λήψη του matomo.js.",
+        "MatomoJSCheckFailedCurlTip": "δοκιμάστε να εκτελέσετε %s στο διακομιστή σας και να δείτε αν γίνεται επιτυχώς η λήψη του αρχείου",
+        "MatomoJSCheckGzipped": "Το matomo.js διανέμεται συμπιεσμένο.",
+        "MatomoJSCheckMIMEError": "Το matomo.js διανέμεται με Content-Type 'application/javascript'. Χρησιμοποιείτε '%s'.",
+        "MatomoJSCheckNotGzipped": "Το matomo.js δεν διανέμεται με μορφή gzip. Καλό είναι να ορίσετε το gzip για τα αρχεία .js, καθώς μπορεί να μειώσει το μέγεθος του αρχείου μέχρι και 60 %.",
+        "MatomoJSCheckUnknown": "Το Matomo δεν μπόρεσε να ελέγξει αν το matomo.js μπορεί να ληφθεί σωστά.",
+        "NotificationTitle": "Σχετικά με το DiagnosticsExtended"
+    }
+}
