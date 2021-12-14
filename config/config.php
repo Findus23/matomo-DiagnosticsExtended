@@ -18,7 +18,6 @@ return [
         DI\get('\Piwik\Plugins\DiagnosticsExtended\Diagnostic\CurlVersionCheck'),
         DI\get('\Piwik\Plugins\DiagnosticsExtended\Diagnostic\OpensslVersionCheck'),
         DI\get('\Piwik\Plugins\DiagnosticsExtended\Diagnostic\PhpUserCheck'),
-        DI\get('\Piwik\Plugins\DiagnosticsExtended\Diagnostic\URLCheck'),
         DI\get('\Piwik\Plugins\DiagnosticsExtended\Diagnostic\OpcacheCheck'),
     ]),
 
