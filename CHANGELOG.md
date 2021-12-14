@@ -1,6 +1,12 @@
 ## Changelog
 
-### 0.1.8 
+### 0.1.9
+
+- removed URLCheck as a similar test is now part of Matomo
+- improved matomo.js check thanks to @d--j
+- improved and added translations thanks to the [contributors on Weblate](https://hosted.weblate.org/credits/matomo/communityplugin-diagnosticsextended/)
+
+### 0.1.8
 
 Add Greek translation
 
