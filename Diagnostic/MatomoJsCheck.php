@@ -68,8 +68,8 @@ class MatomoJsCheck implements Diagnostic
             if (
                 $status != 200
                 || strpos($data, "c80d50af7d3db9be66a4d0a86db0286e4fd33292") === false
-                || empty($headers["content-type"])
-                || empty($headers["content-encoding"])
+                || empty($headers["Content-Type"])
+                || empty($headers["Vary"])
             ) {
                 $result = new DiagnosticResult($this->label);
                 $result->addItem(new DiagnosticResultItem(
@@ -82,8 +82,8 @@ class MatomoJsCheck implements Diagnostic
                 return [$result];
             }
             $results = new DiagnosticResult($this->label);
-            $contentType = $headers["content-type"];
-            if ($contentType !== "application/javascript") {
+            $contentType = $headers["Content-Type"];
+            if (strpos($contentType, "application/javascript") !== 0) {
                 $results->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_WARNING,
                     Piwik::translate("DiagnosticsExtended_MatomoJSCheckMIMEError",
@@ -91,8 +91,8 @@ class MatomoJsCheck implements Diagnostic
                 ));
 
             }
-            $contentEncoding = $headers["content-encoding"];
-            if ($contentEncoding === "gzip" || $contentEncoding === "br") {
+            $vary = strtolower($headers["Vary"]);
+            if (strpos($vary, 'accept-encoding') !== false) {
                 $results->addItem(new DiagnosticResultItem(
                     DiagnosticResult::STATUS_OK,
                     Piwik::translate("DiagnosticsExtended_MatomoJSCheckGzipped")
