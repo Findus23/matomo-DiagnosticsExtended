@@ -90,10 +90,10 @@ class URLCheck implements Diagnostic
     {
         $relativeUrl = "config/config.ini.php";
         list($status, $headers, $data) = $this->makeHTTPReququest($relativeUrl);
-        if ($this->contains($data, "salt")) {
+        if ($status < 400 && $status > 499 && $this->contains($data, "salt")) {
             return $this->isPublicError($relativeUrl, true);
         }
-        if ($this->contains($data, ";")) {
+        if ($status < 400 && $status > 499 && $this->contains($data, ";")) {
             return new DiagnosticResultItem(
                 DiagnosticResult::STATUS_WARNING,
                 Piwik::translate("DiagnosticsExtended_URLCheckConfigIni", ["<code>$relativeUrl</code>"])
