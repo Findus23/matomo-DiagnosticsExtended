@@ -45,6 +45,6 @@
         "PhpVersionCheckNoInformation": "No information is known about your PHP version (%s)",
         "PhpVersionCheckNotEol": "Your PHP version (%1$s) receives security support by the PHP team until %2$s.",
         "PhpVersionCheckNotWorking": "Matomo could not check if your PHP version is up-to-date",
-        "PhpVersionCheckOutdated": "There is a newer PHP patch version (%1$s) available (you are using %2$s). You should update to it as soon as possible",
+        "PhpVersionCheckOutdated": "There is a newer PHP patch version (%1$s) available (you are using %2$s). You should update to it as soon as possible"
     }
 }
