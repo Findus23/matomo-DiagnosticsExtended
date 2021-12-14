@@ -1,1 +1,14 @@
-{}
+{
+    "DiagnosticsExtended": {
+        "CurlVersionCheckLabel": "cURL-versjonssjekk",
+        "NotificationTitle": "Om DiagnosticsExtended",
+        "PhpIniCheckIsDisabled": "%s er påskrudd",
+        "PhpIniCheckIsEnabled": "%s er påskrudd",
+        "PhpIniCheckShouldBeDisabled": "%s bør skrus av",
+        "PhpIniCheckShouldBeEnabled": "%s bør skrus på",
+        "PhpUserCheckLabel": "PHP kjører som rot-bruker",
+        "PhpVersionCheckLabel": "PHP-versjon",
+        "PhpVersionCheckLatestVersion": "Du kjører siste versjon av PHP %s",
+        "PhpVersionCheckNoInformation": "Ingen info er kjent om din PHP-versjon (%s)"
+    }
+}
