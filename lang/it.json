@@ -1,1 +1,14 @@
-{}
+{
+    "DiagnosticsExtended": {
+        "CurlVersionCheckFailed": "Matomo non è riuscito a verificare se la tua versione di curl ha delle vulnerabilità.",
+        "CurlVersionCheckLabel": "controllo versione curl",
+        "CurlVersionCheckNoCurl": "La tua installazione di PHP non utilizza curl, quindi non c'è nulla da controllare.",
+        "CurlVersionCheckUpToDate": "Sembra che non ci siano vulnerabilità conosciute per la tua versione di curl (%s).",
+        "DatabaseVersionCheckLabel": "Versione database",
+        "DatabaseVersionCheckMariaDBLatestVersion": "Stai usando l'ultima versione di MariaDB %s.",
+        "DatabaseVersionCheckMariaDBNotEol": "La tua versione di MariaDB(%1$s) riceverà supporto di sicurezza dal team di MariaDB fino a %2$s.",
+        "MatomoJSCheckFailed": "Sembra che matomo.js non possa essere raggiunto correttamente.",
+        "MatomoJSCheckFailedCurlTip": "prova ad eseguire %s sul tuo server e controllare se è in grado di raggiungere il file",
+        "MatomoJSCheckGzipped": "matomo.js viene restituito compresso."
+    }
+}
