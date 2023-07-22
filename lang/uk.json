@@ -1,1 +1,14 @@
-{}
+{
+    "DiagnosticsExtended": {
+        "BackportingDisclaimerMariaDB": "(якщо розповсюджувач вашого двійкового файлу MariaDB не підтримує патчі безпеки)",
+        "BackportingDisclaimerPHP": "(якщо розповсюджувач вашого двійкового файлу PHP не підтримує патчі безпеки)",
+        "CurlVersionCheckFailed": "Matomo не зміг перевірити, чи є у вашій версії curl уразливості.",
+        "CurlVersionCheckLabel": "перевірка версії curl",
+        "CurlVersionCheckNoCurl": "Ваші налаштування PHP не використовують curl, тому немає чого перевіряти.",
+        "CurlVersionCheckUpToDate": "Здається, у вашій версії curl (%s) немає відомих уразливостей.",
+        "CurlVersionCheckVulnerable": "Ваша версія curl (%s) може бути вразливою до цих уразливостей (якщо розповсюджувач вашого двійкового файлу curl не підтримує патчі безпеки):",
+        "DatabaseVersionCheckLabel": "Версія бази даних",
+        "DatabaseVersionCheckMariaDBEol": "Ваша версія MariaDB (%1$s) більше не отримує підтримки безпеки від команди MariaDB (з %2$s). Вам слід оновити до новішої версії",
+        "DatabaseVersionCheckMariaDBLatestVersion": "Ви використовуєте останню версію MariaDB %s."
+    }
+}

@@ -1,1 +1,9 @@
-{}
+{
+    "DiagnosticsExtended": {
+        "BackportingDisclaimerMariaDB": "(a no ser que la distribución de su binario de MariaDB esté incorporando actualizaciones de seguridad)",
+        "BackportingDisclaimerPHP": "(salvo que la distribución de su binario de PHP esté incorporando actualizaciones de seguridad)",
+        "CurlVersionCheckFailed": "Matomo no ha podido verificar si su versión de curl tiene vulnerabilidades.",
+        "CurlVersionCheckLabel": "verificación de versión de curl",
+        "CurlVersionCheckUpToDate": "Parece que no hay vulnerabilidades conocidas en su versión de curl (%s)."
+    }
+}
