@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.2.0
+
+Matomo 5 compatibility
+
 ### 0.1.9
 
 - removed URLCheck as a similar test is now part of Matomo

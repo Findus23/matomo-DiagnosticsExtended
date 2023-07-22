@@ -1,10 +1,10 @@
 {
     "name": "DiagnosticsExtended",
     "description": "Additional checks for the System Check",
-    "version": "0.1.9",
+    "version": "0.2.0",
     "theme": false,
     "require": {
-        "matomo": ">=4.2.0,<5.0.0-b1"
+        "matomo": ">=5.0.0-b1,<6.0.0-b1"
     },
     "authors": [
         {
