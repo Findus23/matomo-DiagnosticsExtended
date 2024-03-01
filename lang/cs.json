@@ -1,1 +1,7 @@
-{}
+{
+    "DiagnosticsExtended": {
+        "BackportingDisclaimerMariaDB": "(pokud distributor vaší binární verze MariaDB neprovádí backport bezpečnostních záplat)",
+        "BackportingDisclaimerPHP": "(pokud distributor vaší binární verze PHP neprovádí backport bezpečnostních záplat)",
+        "CurlVersionCheckFailed": "Matomo nemohl zkontrolovat, zda vaše verze curl obsahuje zranitelnosti."
+    }
+}

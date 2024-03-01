@@ -1,1 +1,10 @@
-{}
+{
+    "DiagnosticsExtended": {
+        "BackportingDisclaimerMariaDB": "（除非MariaDB二进制文件的分发商正在回溯安全补丁）",
+        "BackportingDisclaimerPHP": "（除非您的PHP二进制文件的分发商正在回溯安全补丁）",
+        "CurlVersionCheckFailed": "Matomo无法检查您的curl版本是否存在漏洞。",
+        "CurlVersionCheckLabel": "curl版本检查",
+        "CurlVersionCheckNoCurl": "您的PHP设置不使用curl，因此无需检查任何内容。",
+        "CurlVersionCheckUpToDate": "看起来您的curl版本（%s）中没有已知的漏洞。"
+    }
+}

@@ -4,7 +4,7 @@
         "BackportingDisclaimerPHP": "(εκτός αν ο διανομέας του εκτελέσιμου της PHP ενσωματώνει διορθώσεις ασφαλείας)",
         "CurlVersionCheckFailed": "Το Matomo δεν μπόρεσε να ελέγξει αν η έκδοσή σας της curl έχει ευπάθειες.",
         "CurlVersionCheckLabel": "έλεγχος έκδοσης curl",
-        "CurlVersionCheckNoCurl": "Η PHP σας δεν χρησιμοποιεί curl, οπότε δεν υπάρχει κάτι για έλεγχο.",
+        "CurlVersionCheckNoCurl": "Η εγκατάσταση της PHP σας δεν χρησιμοποιεί curl, οπότε δεν υπάρχει κάτι να ελεγχθεί.",
         "CurlVersionCheckUpToDate": "Φαίνεται να υπάρχουν ορισμένες γνωστές ευπάθειες στην έκδοσή σας του curl (%s).",
         "CurlVersionCheckVulnerable": "Η έκδοσή σας του curl (%s) ενδέχεται να είναι επισφαλής σε ορισμένες ευπάθειες (εκτός αν ο διανομέας του εκτελέσιμου του curl ενσωματώνει διορθώσεις ασφαλείας):",
         "DatabaseVersionCheckLabel": "Έκδοσης Βάσης Δεδομένων",
