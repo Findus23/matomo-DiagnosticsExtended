@@ -1,1 +1,16 @@
-{}
+{
+    "DiagnosticsExtended": {
+        "BackportingDisclaimerMariaDB": "(除非你的 MariaDB 發布者提供向後移植的安全性更新)",
+        "BackportingDisclaimerPHP": "(除非你的 PHP 發布者提供向後移植的安全性更新)",
+        "CurlVersionCheckFailed": "Matomo 無法檢查你的 curl 版本是否有漏洞。",
+        "CurlVersionCheckLabel": "curl 版本檢查",
+        "CurlVersionCheckNoCurl": "你的 PHP 環境未使用 curl，所以不需要檢查。",
+        "CurlVersionCheckUpToDate": "你的 curl 版本 (%s) 看起來沒有已知漏洞。",
+        "CurlVersionCheckVulnerable": "你的 curl 版本 (%s) 容易受到這些漏洞的攻擊 (除非你的 curl 發布者提供向後移植的安全性更新)：",
+        "DatabaseVersionCheckLabel": "資料庫版本",
+        "DatabaseVersionCheckMariaDBEol": "你的 MariaDB 版本 (%s) 已經不再接受 MariaDB 團隊支援 (自 %2$s 起)。你應該更新到新版",
+        "DatabaseVersionCheckMariaDBLatestVersion": "你正在使用最新版的 MariaDB %s。",
+        "DatabaseVersionCheckMariaDBNotEol": "你的 MariaDB 版本 (%1$s) 接受 MariaDB 團隊支援直到 %2$s。",
+        "DatabaseVersionCheckMariaDBOutdated": "MariaDB 已有更新版本 (%1$s) 可供使用 (你正使用 %2$s/%3$s)。你應該盡快更新"
+    }
+}
