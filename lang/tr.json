@@ -42,7 +42,7 @@
         "PhpVersionCheckEol": "PHP sürümünüze (%1$s) artık PHP ekibi tarafından güvenlik desteği sağlanmıyor (%2$s zamanından beri). Daha yeni bir sürüme güncellemelisiniz",
         "PhpVersionCheckLabel": "PHP sürümü",
         "PhpVersionCheckLatestVersion": "Güncel PHP %s sürümünü kullanıyorsunuz",
-        "PhpVersionCheckNoInformation": "PHP sürümünüz hakkında herhangi bir şey bilinmiyor (%s)",
+        "PhpVersionCheckNoInformation": "PHP sürümünüz ile ilgili herhangi bir şey bilinmiyor (%s)",
         "PhpVersionCheckNotEol": "PHP sürümünüze (%1$s), PHP ekibi tarafından %2$s tarihine kadar güvenlik desteği sağlanacak.",
         "PhpVersionCheckNotWorking": "Matomo, PHP sürümünüzün güncel olup olmadığını denetleyemedi",
         "PhpVersionCheckOutdated": "Daha yeni bir PHP yama sürümü (%1$s) yayınlanmış (%2$s kullanıyorsunuz). En kısa zamanda güncellemelisiniz"
