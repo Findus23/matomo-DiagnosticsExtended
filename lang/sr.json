@@ -1,1 +1,5 @@
-{}
+{
+    "DiagnosticsExtended": {
+        "PhpVersionCheckLabel": "Verzija PHP-a"
+    }
+}

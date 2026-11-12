@@ -9,6 +9,7 @@
         "CurlVersionCheckVulnerable": "Ваша версія curl (%s) може бути вразливою до цих уразливостей (якщо розповсюджувач вашого двійкового файлу curl не підтримує патчі безпеки):",
         "DatabaseVersionCheckLabel": "Версія бази даних",
         "DatabaseVersionCheckMariaDBEol": "Ваша версія MariaDB (%1$s) більше не отримує підтримки безпеки від команди MariaDB (з %2$s). Вам слід оновити до новішої версії",
-        "DatabaseVersionCheckMariaDBLatestVersion": "Ви використовуєте останню версію MariaDB %s."
+        "DatabaseVersionCheckMariaDBLatestVersion": "Ви використовуєте останню версію MariaDB %s.",
+        "PhpVersionCheckLabel": "Версія PHP"
     }
 }

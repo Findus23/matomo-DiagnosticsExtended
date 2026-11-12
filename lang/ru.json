@@ -1,1 +1,6 @@
-{}
+{
+    "DiagnosticsExtended": {
+        "BackportingDisclaimerMariaDB": "(если только дистрибьютор вашего двоичного файла MariaDB не занимается обратным портированием исправлений безопасности)",
+        "PhpVersionCheckLabel": "Версия PHP"
+    }
+}
